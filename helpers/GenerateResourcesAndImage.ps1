@@ -79,7 +79,7 @@ Function GenerateResourcesAndImage {
         [Parameter(Mandatory = $True)]
         [string] $AzureLocation,
         [Parameter(Mandatory = $False)]
-        [int] $SecondsToWaitForServicePrincipalSetup = 30,
+        [int] $SecondsToWaitForServicePrincipalSetup = 60,
         [Parameter(Mandatory = $False)]
         [string] $GithubFeedToken,
         [Parameter(Mandatory = $False)]
@@ -172,7 +172,6 @@ Function GenerateResourcesAndImage {
         -var "subscription_id=$($SubscriptionId)" `
         -var "tenant_id=$($tenantId)" `
         -var "object_id=$($spObjectId)" `
-        -var "location=$($AzureLocation)" `
         -var "resource_group=$($ResourceGroupName)" `
         -var "storage_account=$($storageAccountName)" `
         -var "install_password=$($InstallPassword)" `
